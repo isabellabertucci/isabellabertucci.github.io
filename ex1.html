@@ -8,5 +8,21 @@
 </head>
 <body>
     <h1>Hello!</h1>
-</body>
+    <h1>Sistema de MULTAS</h1>
+    Velocidade do carro: <input type="number" name="txtvel" id="txtvel"> km/h
+    <input type="button" value="verificar" onclick="calcular()">
+    <div id="res"> </div>
+
+    <script>
+        let txtvel = window.document.getElementById('txtvel')
+
+        function calcular() {
+            let res = window.document.getElementById('res')
+            let vel = Number(txtvel.value)
+            res.innerHTML = `sua velocidade atual é ${vel} km/h` 
+            if (vel > 60)
+            res.innerHTML += `<p> voce foi multado por excesso de velocidade </p>`
+        }
+    </script>
+</body>    
 </html>
